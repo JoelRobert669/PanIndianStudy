@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+\<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,40 +9,32 @@
     <!-- Using Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <style>
-        /* Global styles */
-        body { /* MODIFIED for centering and padding */
+        /* Global styles - MODIFIED for less padding */
+        body {
             margin: 0;
-            padding: 1rem; /* Add some padding around the wrapper */
-            overflow: hidden; /* Prevents scrollbars on the body */
+            padding: 0.5rem; /* Reduced padding around the wrapper */
+            overflow: hidden;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #111827; /* bg-gray-900 */
+            background-color: #111827;
             display: flex;
-            align-items: center; /* Vertically center */
-            justify-content: center; /* Horizontally center */
+            align-items: center;
+            justify-content: center;
             min-height: 100vh;
             box-sizing: border-box;
         }
 
-        /* Presentation wrapper - MODIFIED FOR SCALING */
+        /* Presentation wrapper - MODIFIED FOR EVEN MORE SCALING */
         #presentation-wrapper {
             position: relative;
-            /* Use viewport width, up to a maximum */
-            width: 90vw; /* Occupy 90% of viewport width */
-            max-width: 1600px; /* Limit maximum size (adjust as needed) */
-
-            /* Remove fixed height, let aspect ratio control it */
+            width: 98vw; /* Occupy 98% of viewport width */
+            /* Removed max-width to rely more on height constraint */
             height: auto;
-            /* Enforce the 16:9 aspect ratio */
             aspect-ratio: 1280 / 720;
-
-            /* Ensure it doesn't exceed viewport height */
-            max-height: 90vh; /* Limit maximum height to 90% of viewport height */
-
+            max-height: 98vh; /* Limit maximum height to 98% of viewport height */
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             background: linear-gradient(135deg, #1e1e42 0%, #2d1a4c 50%, #251544 100%);
             color: white;
-            /* Add margin auto for horizontal centering within flex container if needed */
             margin-left: auto;
             margin-right: auto;
         }
@@ -59,9 +51,10 @@
             overflow-y: auto; /* Allow scroll within slide if needed */
             opacity: 0;
             transition: opacity 0.4s ease-in-out;
-            /* Use percentages or viewport units for padding relative to container size */
+            /* Padding using percentages to scale somewhat with container */
             padding: 5% 6% 8% 6%; /* Adjusted padding */
             box-sizing: border-box; /* Include padding in height/width */
+            z-index: 1; /* Keep active slide above inactive */
         }
         /* Custom scrollbar for webkit browsers */
         .slide::-webkit-scrollbar { width: 8px; }
@@ -113,8 +106,7 @@
         .solution-bar { height: 10px; border-radius: 5px; }
         .solution-fill { border-radius: 5px; }
         /* Ensure 100% width fills visually */
-        /* Example: Use a specific, non-fading gradient for 100% budget bars */
-         .budget-fill[style*="width: 100%"] { background: linear-gradient(90deg, #ff7e5f, #feb47b); }
+        .budget-fill[style*="width: 100%"] { background: linear-gradient(90deg, #ff7e5f, #feb47b); }
         .budget-label { position: absolute; top: -20px; right: 5px; font-size: 0.75rem; font-weight: bold; color: #e5e7eb; }
         .strategy-icon { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-right: 1rem; flex-shrink: 0; }
         .connection-line { position: absolute; width: 2px; background: linear-gradient(to bottom, rgba(70, 199, 255, 0.8), rgba(255, 126, 95, 0.8)); }
@@ -220,6 +212,9 @@
              box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         #total-pages { color: white; opacity: 0.7; margin-left: 0.3rem; font-size: 0.8rem; }
+
+        /* Consider adding media queries for very small screens if needed */
+        /* @media (max-width: 768px) { ... } */
 
     </style>
 </head>
@@ -449,4 +444,3 @@
 
 </body>
 </html>
-```
